@@ -143,7 +143,7 @@ module.exports = context => {
               } else if (config.getPreference('UseSwiftLanguageVersion', 'ios')) {
                 const swiftVersion = config.getPreference('UseSwiftLanguageVersion', 'ios');
                 xcodeProject.updateBuildProperty('SWIFT_VERSION', swiftVersion, buildConfig.name);
-                console.log('Use Swift language version', swiftVersion);
+                console.log('Use Swift language version UseSwiftLanguageVersion', swiftVersion);
               } else {
                 xcodeProject.updateBuildProperty('SWIFT_VERSION', '5.9.2', buildConfig.name);
                 console.log('Update SWIFT version to 5.0', buildConfig.name);
