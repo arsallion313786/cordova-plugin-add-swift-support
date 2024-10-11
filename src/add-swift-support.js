@@ -136,7 +136,7 @@ module.exports = context => {
               console.log('Update IOS build setting LD_RUNPATH_SEARCH_PATHS to: @executable_path/Frameworks', 'for build configuration', buildConfig.name);
             }
 
-            if (typeof xcodeProject.getBuildProperty('SWIFT_VERSION', buildConfig.name) === 'undefined') {
+           // if (typeof xcodeProject.getBuildProperty('SWIFT_VERSION', buildConfig.name) === 'undefined') {
               if (config.getPreference('UseLegacySwiftLanguageVersion', 'ios')) {
                 xcodeProject.updateBuildProperty('SWIFT_VERSION', '2.3', buildConfig.name);
                 console.log('Use legacy Swift language version', buildConfig.name);
@@ -148,7 +148,7 @@ module.exports = context => {
                 xcodeProject.updateBuildProperty('SWIFT_VERSION', '5.9.2', buildConfig.name);
                 console.log('Update SWIFT version to 5.0', buildConfig.name);
               }
-            }
+            //}
 
             if (buildConfig.name === 'Debug') {
               if (xcodeProject.getBuildProperty('SWIFT_OPTIMIZATION_LEVEL', buildConfig.name) !== '"-Onone"') {
